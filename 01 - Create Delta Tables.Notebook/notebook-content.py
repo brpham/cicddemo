@@ -47,6 +47,37 @@ spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 
 # CELL ********************
 
+from pyspark.sql.functions import col, year, month, quarter, rand
+
+table_name = 'fact_sale'
+target_rows = 1_000_000
+
+df = spark.read.format("parquet").load('Files/wwi-raw-data/parquet/full/fact_sale_1y_full')
+
+# Parquet row counts come from file metadata, so this is cheap
+total_rows = df.count()
+
+# Oversample by 5%, then trim to exactly 5M
+fraction = min(1.0, (target_rows / total_rows) * 1.05)
+df = (df.sample(withReplacement=False, fraction=fraction, seed=42)
+        .orderBy(rand(seed=42))
+        .limit(target_rows))
+
+df = df.withColumn('Year', year(col("InvoiceDateKey")))
+df = df.withColumn('Quarter', quarter(col("InvoiceDateKey")))
+df = df.withColumn('Month', month(col("InvoiceDateKey")))
+
+df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 from pyspark.sql.functions import col, year, month, quarter
 
 table_name = 'fact_sale'
@@ -62,7 +93,9 @@ df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("T
 
 # META {
 # META   "language": "python",
-# META   "language_group": "synapse_pyspark"
+# META   "language_group": "synapse_pyspark",
+# META   "frozen": true,
+# META   "editable": false
 # META }
 
 # MARKDOWN ********************

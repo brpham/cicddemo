@@ -1,0 +1,138 @@
+table dimension_date
+	lineageTag: c0371fca-0bd5-433b-aefd-98931f3f3278
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 54d090a1-3df4-41da-a95e-2544233cce4e
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: c9294e1a-eda2-4753-9f36-8521ad485b6b
+			defaultHierarchy: LocalDateTable_e913fb2c-4d34-486e-bbdd-1466868ed4b3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c92a48f-f5bc-4fd9-a68c-8e6c852b5089
+		summarizeBy: sum
+		sourceColumn: DayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: 7c66dec8-11b0-4416-8e77-ab8f8ee569aa
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 9a37ae43-1c82-4fa6-b01c-6e41cf9f3b01
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortMonth
+		dataType: string
+		lineageTag: 8928ffe2-a9ec-437e-b8e0-c0627c31daf8
+		summarizeBy: none
+		sourceColumn: ShortMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 7526d33e-1575-49c9-b2c5-5104ea5f2ef4
+		summarizeBy: sum
+		sourceColumn: CalendarMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthLabel
+		dataType: string
+		lineageTag: 84d1f820-cfb7-4223-ac81-5e5f92ffbc95
+		summarizeBy: none
+		sourceColumn: CalendarMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: b4c537de-413a-4642-b49d-a727cf2d4a63
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYearLabel
+		dataType: string
+		lineageTag: 56f6ea4d-95d8-46fe-8039-9cfef8516cac
+		summarizeBy: none
+		sourceColumn: CalendarYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fd27110-59d2-44d5-a96e-218be50f508f
+		summarizeBy: sum
+		sourceColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthLabel
+		dataType: string
+		lineageTag: 01327013-0c4b-4fac-98b2-3b89223a1783
+		summarizeBy: none
+		sourceColumn: FiscalMonthLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ad842c9-8cd8-486c-91f8-cc85af1e0e1c
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearLabel
+		dataType: string
+		lineageTag: ee86a336-5170-4844-a6f3-7e1ee360d352
+		summarizeBy: none
+		sourceColumn: FiscalYearLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISOWeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 6957b656-05fe-402c-9de8-3520fb242b0c
+		summarizeBy: sum
+		sourceColumn: ISOWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_date = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("i6fqlbgfjhsuhpwbeysc3x63mm-33ydzy5arhperawbr2i2rz5vry.datawarehouse.fabric.microsoft.com", "wwilakehouse"),
+				    dbo_dimension_date = Source{[Schema="dbo",Item="dimension_date"]}[Data]
+				in
+				    dbo_dimension_date
+
+	annotation PBI_ResultType = Table
+

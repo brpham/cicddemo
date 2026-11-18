@@ -1,0 +1,70 @@
+relationship 918a5474-c000-4d4f-9949-3d324a07060c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_city.ValidFrom
+	toColumn: LocalDateTable_b3a6cd1d-f03d-4695-96f1-6d82f65f70e6.Date
+
+relationship 06509b53-ccbb-490b-8d0f-f171d3b93e01
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_city.ValidTo
+	toColumn: LocalDateTable_0bbb33b2-2355-4f76-8c7e-42ce22960d6e.Date
+
+relationship c3a2552f-e73b-482d-a943-c0ef1e6e2072
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_customer.ValidFrom
+	toColumn: LocalDateTable_7c82685b-122a-4fef-8d7a-a9d35f35fb78.Date
+
+relationship 8213e564-b967-4316-868f-e7b69a46a578
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_customer.ValidTo
+	toColumn: LocalDateTable_15e80630-e070-4c1c-9d19-040ce7cd5385.Date
+
+relationship 188cb290-afc8-4f5d-a2e2-5aa1c8e644bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_stock_item.ValidFrom
+	toColumn: LocalDateTable_4670d326-a550-4179-ab00-3fddc217a651.Date
+
+relationship daaac953-010a-47ad-acda-00904c5d4483
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_stock_item.ValidTo
+	toColumn: LocalDateTable_8dedf385-85ad-4004-9af7-d465cd427ca7.Date
+
+relationship c660c51c-6904-432d-8ff9-c5de8e1b6576
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sale.DeliveryDateKey
+	toColumn: LocalDateTable_076fba02-2b63-4905-bc34-103dc8e5b319.Date
+
+relationship 6dac2995-baeb-46bf-b2b2-aa9b315a7d35
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_employee.ValidFrom
+	toColumn: LocalDateTable_5ea90ac1-3cbe-460f-9d70-b7190756c3b7.Date
+
+relationship f3ff9805-ce49-499f-ad30-c1778665861f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_employee.ValidTo
+	toColumn: LocalDateTable_9dbb0d4d-7de2-4bb1-bc5b-5d3aa4b53284.Date
+
+relationship c9294e1a-eda2-4753-9f36-8521ad485b6b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dimension_date.Date
+	toColumn: LocalDateTable_e913fb2c-4d34-486e-bbdd-1466868ed4b3.Date
+
+relationship AutoDetected_6757d2f5-8ae9-4aed-a87c-3e78251cc0ff
+	fromColumn: fact_sale.CityKey
+	toColumn: dimension_city.CityKey
+
+relationship AutoDetected_95dc45bf-b12b-4dbb-be86-70b832fb6814
+	fromColumn: fact_sale.CustomerKey
+	toColumn: dimension_customer.CustomerKey
+
+relationship AutoDetected_460e7555-e37f-4218-a4df-a25d1142097e
+	fromColumn: fact_sale.StockItemKey
+	toColumn: dimension_stock_item.StockItemKey
+
+relationship 4c7f1dd3-6e76-131c-08de-6484290e79dd
+	fromColumn: fact_sale.InvoiceDateKey
+	toColumn: dimension_date.Date
+
+relationship a775701c-0803-cebe-6e39-f3f8915e4ae2
+	fromColumn: fact_sale.SalespersonKey
+	toColumn: dimension_employee.EmployeeKey
+

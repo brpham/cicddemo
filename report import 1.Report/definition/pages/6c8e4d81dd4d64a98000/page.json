@@ -1,0 +1,236 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "6c8e4d81dd4d64a98000",
+  "displayName": "Page 1",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "autoPageGenerationConfig": {
+    "selectedFields": [
+      {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "dimension_stock_item"
+            }
+          },
+          "Property": "Color"
+        }
+      },
+      {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_stock_item"
+                }
+              },
+              "Property": "WWIStockItemID"
+            }
+          },
+          "Function": 5
+        }
+      }
+    ],
+    "visualContainerConfigurations": [
+      {
+        "name": "75955fd0e00d837456ea",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_stock_item"
+                }
+              },
+              "Property": "Color"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "WWIStockItemID"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "f7c540d6bc1c8003c6ce",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_stock_item"
+                }
+              },
+              "Property": "SellingPackage"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "WWIStockItemID"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "190ce567e7030749912c",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_stock_item"
+                }
+              },
+              "Property": "BuyingPackage"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "WWIStockItemID"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "5d75ccba1cd8e201bd08",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_stock_item"
+                }
+              },
+              "Property": "Color"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "UnitPrice"
+                }
+              },
+              "Function": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "afb22c18e8dad380a2a4",
+        "fields": []
+      },
+      {
+        "name": "095aedb994e0aa8c60e6",
+        "fields": []
+      },
+      {
+        "name": "f6c18a2562e1da279b89",
+        "fields": []
+      },
+      {
+        "name": "ea3b05d485236a8440c1",
+        "fields": []
+      },
+      {
+        "name": "c38fb351a0ce02c5eb90",
+        "fields": []
+      },
+      {
+        "name": "b48cd8c01569bc852486",
+        "fields": []
+      },
+      {
+        "name": "7f377d20c779d1dd58b8",
+        "fields": []
+      },
+      {
+        "name": "4496b6261cd60514e590",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "WWIStockItemID"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "2b34914064a987c61c3e",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_stock_item"
+                    }
+                  },
+                  "Property": "UnitPrice"
+                }
+              },
+              "Function": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "7af04f832b9edeed14ed",
+        "fields": []
+      }
+    ],
+    "layout": {
+      "related": {
+        "version": 1
+      }
+    }
+  }
+}

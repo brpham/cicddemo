@@ -1,0 +1,94 @@
+table dimension_employee
+	lineageTag: 09e89df5-6989-4b4e-b206-77e955868280
+
+	column EmployeeKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b47b8606-c2a2-48fe-9abd-2e5a0d50a5d7
+		summarizeBy: none
+		sourceColumn: EmployeeKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column WWIEmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2db593fd-da28-4312-bd07-f06ec32d8d09
+		summarizeBy: count
+		sourceColumn: WWIEmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employee
+		dataType: string
+		lineageTag: a13ef553-3ec5-4cb7-bdd0-080f39404351
+		summarizeBy: none
+		sourceColumn: Employee
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreferredName
+		dataType: string
+		lineageTag: 2437e688-af97-407a-890b-d497f59275b9
+		summarizeBy: none
+		sourceColumn: PreferredName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSalesperson
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7ac2e206-9d9e-46f7-974a-6b9ba65b0922
+		summarizeBy: none
+		sourceColumn: IsSalesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: efd7e793-471f-4101-836a-64e9ee36103d
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		variation Variation
+			isDefault
+			relationship: 6dac2995-baeb-46bf-b2b2-aa9b315a7d35
+			defaultHierarchy: LocalDateTable_5ea90ac1-3cbe-460f-9d70-b7190756c3b7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ada0cf38-b7a4-4582-b012-904de6593bdf
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		variation Variation
+			isDefault
+			relationship: f3ff9805-ce49-499f-ad30-c1778665861f
+			defaultHierarchy: LocalDateTable_9dbb0d4d-7de2-4bb1-bc5b-5d3aa4b53284.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineageKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b2f92b4-009d-4656-886b-0c71d3fdf218
+		summarizeBy: count
+		sourceColumn: LineageKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_employee = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("i6fqlbgfjhsuhpwbeysc3x63mm-33ydzy5arhperawbr2i2rz5vry.datawarehouse.fabric.microsoft.com", "wwilakehouse"),
+				    dbo_dimension_employee = Source{[Schema="dbo",Item="dimension_employee"]}[Data]
+				in
+				    dbo_dimension_employee
+
+	annotation PBI_ResultType = Table
+

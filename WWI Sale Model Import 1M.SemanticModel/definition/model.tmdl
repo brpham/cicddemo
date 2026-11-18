@@ -1,0 +1,33 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dimension_city","dimension_customer","dimension_stock_item","fact_sale","dimension_employee","dimension_date"]
+
+ref table dimension_city
+ref table DateTableTemplate_f9fb39d5-0fae-4dcc-b2ed-2044c4856f07
+ref table LocalDateTable_b3a6cd1d-f03d-4695-96f1-6d82f65f70e6
+ref table LocalDateTable_0bbb33b2-2355-4f76-8c7e-42ce22960d6e
+ref table dimension_customer
+ref table LocalDateTable_7c82685b-122a-4fef-8d7a-a9d35f35fb78
+ref table LocalDateTable_15e80630-e070-4c1c-9d19-040ce7cd5385
+ref table dimension_stock_item
+ref table LocalDateTable_4670d326-a550-4179-ab00-3fddc217a651
+ref table LocalDateTable_8dedf385-85ad-4004-9af7-d465cd427ca7
+ref table fact_sale
+ref table LocalDateTable_076fba02-2b63-4905-bc34-103dc8e5b319
+ref table dimension_employee
+ref table LocalDateTable_5ea90ac1-3cbe-460f-9d70-b7190756c3b7
+ref table LocalDateTable_9dbb0d4d-7de2-4bb1-bc5b-5d3aa4b53284
+ref table dimension_date
+ref table LocalDateTable_e913fb2c-4d34-486e-bbdd-1466868ed4b3
+
+ref cultureInfo en-US
+

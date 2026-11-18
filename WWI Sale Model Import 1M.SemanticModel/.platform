@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "WWI Sale Model Import 1M"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e96bdba7-5a11-8cc7-4a92-3cbd2757b258"
+  }
+}
